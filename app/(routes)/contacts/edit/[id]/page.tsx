@@ -25,6 +25,7 @@ const Page = () => {
 
   const [serverError, setServerError] = useState<string | null>(null);
   const router = useRouter();
+
   const newContactMutation = useMutation({
     mutationFn: async (data: FormData) => {
       const response = await axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/new-contact`, data);
@@ -47,7 +48,7 @@ const Page = () => {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-md rounded-xl border bg-card p-6 shadow-sm space-y-6">
-        <h1 className="text-xl font-semibold text-center">Contact Information</h1>
+        <h1 className="text-xl font-semibold text-center"> Edit Contact </h1>
 
         {/* Nama */}
         <InputGroup>
